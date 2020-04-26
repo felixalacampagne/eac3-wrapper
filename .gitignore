@@ -1,0 +1,5 @@
+*.bak
+!.ignore
+.*/**
+Release/**
+eac3-wrapper.vcxproj.*
