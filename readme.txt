@@ -1,3 +1,5 @@
+Wrapper program to fix MKVTOMP4 issues with E-AC-3 audio
+
 mkvtomp4 uses eac3to to convert a .wav file extracted by ffmpeg into an .ac3
 file - except the extension for some files is .E-AC-3. This alternate extension
 caused eac3to fail. 
@@ -15,6 +17,17 @@ determine the file type rather than actually examining the content.
 
 So 'qaac' also needs to be wrapped!
 
+
+Started as an Eclipse CDT (Photon) project using cygwin64 and gcc. The target machine does
+not have space to install cygwin64, plus the system command appears to start a cygwin shell
+which might cause all sorts of issues, especially bearing in mind the idiot behaviour of
+cygwin with respect to windows pathnames! The last Visual Studio I had installed on my
+home system was VS2005 - a bit out of date - and since there is now a free version of
+Visual Studio I thought I'd give it a go. Took ages to actually get the environment
+installed - who would have thought that selecting the desktop C++ 'workflow' would not
+automatically install the C/C++ include files and libraries!!!! However the code compiled
+and linked first time! It ran on the target system without needing any redist to be
+installed.
 
 Deploy (rename the real binaries to xxx_wrpd.exe first!!)
 copy /Y "E:\Development\workspace\c-cpp\eac3-wrapper\Release\eac3-wrapper.exe" "E:\Development\utils\MkvToMp4_0.224\Tools\eac3to\eac3to.exe"
